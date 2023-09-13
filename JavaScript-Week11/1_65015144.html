@@ -17,8 +17,8 @@
             const btnText = document.createTextNode("Click me to display Date and Time");
             btnClick.appendChild(btnText);
             const btnClick2 =document.createElement("button");
-            const btnText2 = document.createTextNode("time...");
-            btnClick2.appendChild(btnText2);
+            
+            btnClick.style.position = "absolute";
             btnClick2.style.position = "absolute";
             btnClick2.style.right = 0;
             btnClick2.style.top = 0;
@@ -26,36 +26,64 @@
 
             const br = document.createElement("br");
             
-                
+            let i = 0;
+
+            let colorSelect = () => {
+                let fontcolor = ["#FF2D00","#FFCD00","#93FF00","#00FFBD","#7000FF","#FF0093"];
+                let bgcolor  = ["#814F6C","#727272","#1D341A","#D0B8E7","#E7B8B8","#bb2649"];
+                btnClick2.style.backgroundColor = bgcolor[i];
+                btnClick2.style.color = fontcolor[i];
+                btnClick.style.backgroundColor = bgcolor[i];
+                btnClick.style.color = fontcolor[i];
+                if (i==5) i = 0;
+                i = i+1;
+            }
+
+            let worker = null;
+            let timeafterStop = null;
+        // Function to create a new worker
+            function NewWorker() {
+                if (worker === null) {
+                    worker = new Worker('worker.js'); 
+                    colorSelect();
+                    worker.onmessage = function(e) {
+                    colorSelect();
+                    timeafterStop = e.data;
+                    btnClick2.innerHTML = e.data; 
+                    };
+                } 
+            }
+            function DisWorker() {
+                if (worker !== null) {
+                    worker.terminate();
+                    worker = null;
+                } 
+            }
+
             btnClick.addEventListener("click", function(){
                 btnClick2.style.display = "block";
+                btnClick2.innerHTML = Date();
                 btnClick.style.display = "none";
-                maincontainer.appendChild(br); //mainDiv
-
-               
-                
-                
+                NewWorker();
+                     
             });
 
             btnClick2.addEventListener("click", function(){
                 btnClick2.style.display = "none";
                 btnClick.style.display = "block";
-                btnClick.innerHTML = Date();// date
-                maincontainer.removeChild(br); //mainDiv
-                
-            });
+                btnClick.innerHTML= timeafterStop;
+               DisWorker();
 
-            
+            });
 
             maincontainer.appendChild(btnClick); //mainDiv
             maincontainer.appendChild(btnClick2); //mainDiv
-
-        
+            
 
             const br1 = document.createElement("br");
             const br2 = document.createElement("br");
-            
-
+            const br3 = document.createElement("br");
+            maincontainer.appendChild(br3);
             
             // Presonal Info 
             const aPresonalInfo = document.createElement("a");
@@ -92,7 +120,7 @@
             //insert Text 
             const liTextInfo1 = document.createTextNode("Name: Veerapod Chuchat of student ID: 65015144");
             const liTextInfo2 = document.createTextNode("Subject: Web Application Development");
-            const liTextInfo3 = document.createTextNode("Semester: 1");
+            const liTextInfo3 = document.createTextNode("Semester: 1 /2566");
             
             //insert Text to li 
             liPersonalInfo1.appendChild(liTextInfo1);
@@ -183,7 +211,7 @@
             //img Select
             const imgselect = document.createElement("img");
             liList1.addEventListener("click", function(){
-               console.log("Fireworks");
+               
                event.preventDefault(); 
                imgselect.setAttribute("src", "https://img.kapook.com/u/2017/pailin_p/9995Movies/Fireworks.jpg");
                imgselect.setAttribute("width", "350px");
@@ -192,7 +220,7 @@
             });
 
             liList2.addEventListener("click", function(){
-               console.log("Yourname");
+               
                event.preventDefault(); 
                imgselect.setAttribute("src", "https://m.media-amazon.com/images/M/MV5BNGYyNmI3M2YtNzYzZS00OTViLTkxYjAtZDIyZmE1Y2U1ZmQ2XkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg");
                imgselect.setAttribute("width", "350px");
@@ -201,7 +229,7 @@
             });
 
             liList3.addEventListener("click", function(){
-               console.log("Weathering With You");
+               
                event.preventDefault(); 
                imgselect.setAttribute("src", "https://www.bloggang.com/data/i/iamzeon/picture/1576158266.jpg");
                imgselect.setAttribute("width", "350px");
@@ -210,7 +238,7 @@
             });
 
             liList4.addEventListener("click", function(){
-               console.log("Suzume");
+               
                event.preventDefault(); 
                imgselect.setAttribute("src", "https://m.media-amazon.com/images/M/MV5BNGVkNDc3NjUtNTY5ZS00ZmE0LWE3YzctMDk2OTRlNTdiZWQwXkEyXkFqcGdeQXVyMTU3NDg0OTgx._V1_FMjpg_UX1000_.jpg");
                imgselect.setAttribute("width", "350px");
