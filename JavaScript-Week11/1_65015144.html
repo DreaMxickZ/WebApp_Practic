@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="maincontainer"></div>
+        <script>
+            // Head Exercise 04: JavaScript&DOM
+            const maincontainer = document.getElementById("maincontainer");
+            const HeadEx4 = document.createElement("h2");
+            const TextEx4 = document.createTextNode("Exercise 04: JavaScript&DOM");
+            HeadEx4.appendChild(TextEx4);
+            maincontainer.appendChild(HeadEx4); //mainDiv
+
+            // Button Click me to display Date and Time
+            const btnClick = document.createElement("button");
+            const btnText = document.createTextNode("Click me to display Date and Time");
+            btnClick.appendChild(btnText);
+            maincontainer.appendChild(btnClick); //mainDiv
+
+            const br1 = document.createElement("br");
+            const br2 = document.createElement("br");
+
+            
+            // Presonal Info 
+            const aPresonalInfo = document.createElement("a");
+            aPresonalInfo.classList.add("personalInfoClass");
+            
+            aPresonalInfo.setAttribute("id", "personalInfoID");
+            aPresonalInfo.style.color = "#DDA0DD";
+            aPresonalInfo.style.backgroundColor = "white";
+            
+            const aText = document.createTextNode("Personal Info");
+            aPresonalInfo.appendChild(aText);
+            aPresonalInfo.setAttribute("href", "1_65015144.html");
+            
+            //script Hover Personal Info
+            aPresonalInfo.addEventListener("mouseout", function(){
+                aPresonalInfo.style.color = "#DDA0DD";
+                aPresonalInfo.style.backgroundColor = "white";
+            });
+
+            aPresonalInfo.addEventListener("mouseover", function(){
+                aPresonalInfo.style.color = "blue";
+                aPresonalInfo.style.backgroundColor = "yellow";
+            });
+
+            //script Click Personal Info
+            //setDiv Personal Info
+            const divPersonalInfo = document.createElement("div");
+            const ulPersonalInfo = document.createElement("ul");
+            const liPersonalInfo1 = document.createElement("li");
+            const liPersonalInfo2 = document.createElement("li");
+            const liPersonalInfo3 = document.createElement("li");
+
+            //insert Text 
+            const liTextInfo1 = document.createTextNode("Name: Veerapod Chuchat of student ID: 65015144");
+            const liTextInfo2 = document.createTextNode("Subject: Web Application Development");
+            const liTextInfo3 = document.createTextNode("Semester: 1");
+            
+            //insert Text to li 
+            liPersonalInfo1.appendChild(liTextInfo1);
+            liPersonalInfo2.appendChild(liTextInfo2);
+            liPersonalInfo3.appendChild(liTextInfo3);
+
+            //insert li to ul
+            ulPersonalInfo.appendChild(liPersonalInfo1);
+            ulPersonalInfo.appendChild(liPersonalInfo2);
+            ulPersonalInfo.appendChild(liPersonalInfo3);
+            
+            //insert ul to div
+            divPersonalInfo.appendChild(ulPersonalInfo);
+
+            //add Class to div
+            divPersonalInfo.classList.add("personalInfoo");
+            divPersonalInfo.style.display = "none";
+            divPersonalInfo.setAttribute("id", "divinforesonal");
+
+            //script Click Personal Info
+            // aPresonalInfo.addEventListener("click", function(){
+            //     if(divPersonalInfo.style.display == "none"   || divPersonalInfo.style.display === " "){
+            //         divPersonalInfo.style.display = "block";
+            //     }else{
+            //         divPersonalInfo.style.display = "none";
+            //     }
+            // });
+
+           
+
+
+                        
+
+
+           
+            
+                             
+            maincontainer.appendChild(br1); 
+            maincontainer.appendChild(br2); 
+            
+            maincontainer.appendChild(aPresonalInfo); //mainDiv
+            maincontainer.appendChild(divPersonalInfo);
+            // Topic Snapshots
+            const H1TopicSnapshots = document.createElement("h1");
+            const H1TextSnapshots = document.createTextNode("Snapshots");
+            H1TopicSnapshots.appendChild(H1TextSnapshots);
+            maincontainer.appendChild(H1TopicSnapshots); //mainDiv
+
+
+            // UL List
+            const ulList = document.createElement("ul");
+
+            const liList1 = document.createElement("li");
+            const liList2 = document.createElement("li");
+            const liList3 = document.createElement("li");
+            const liList4 = document.createElement("li");
+
+            const liText1 = document.createTextNode("Fireworks");
+            const liText2 = document.createTextNode("Crest");
+            const liText3 = document.createTextNode("Action");
+            const liText4 = document.createTextNode("Buffalo");
+
+            const aliText1 = document.createElement("a");
+            const aliText2 = document.createElement("a");
+            const aliText3 = document.createElement("a");
+            const aliText4 = document.createElement("a");
+
+            const aText1 = document.createTextNode("Fireworks");
+            const aText2 = document.createTextNode("Crest");
+            const aText3 = document.createTextNode("Action");
+            const aText4 = document.createTextNode("Buffalo");
+
+            aliText1.setAttribute("href", "1_65015144.html");
+            aliText2.setAttribute("href", "1_65015144.html");
+            aliText3.setAttribute("href", "1_65015144.html");
+            aliText4.setAttribute("href", "1_65015144.html");
+
+            aliText1.appendChild(aText1);
+            aliText2.appendChild(aText2);
+            aliText3.appendChild(aText3);
+            aliText4.appendChild(aText4);
+
+            liList1.appendChild(aliText1);
+            liList2.appendChild(aliText2);
+            liList3.appendChild(aliText3);
+            liList4.appendChild(aliText4);
+
+            ulList.appendChild(liList1);
+            ulList.appendChild(liList2);
+            ulList.appendChild(liList3);
+            ulList.appendChild(liList4);
+
+            maincontainer.appendChild(ulList); //mainDiv
+
+
+            //footer
+            const footer = document.createElement("footer");
+            const imgifooter = document.createElement("img");
+            imgifooter.setAttribute("src", "https://media.nngroup.com/media/editor/2019/01/16/clarity.png");
+            imgifooter.setAttribute("width", "500px");
+            imgifooter.setAttribute("height", "90px");
+            footer.appendChild(imgifooter);
+
+            maincontainer.appendChild(footer); //mainDiv
+            
+
+            
+            
+        </script>
+    </body>
+</html>
