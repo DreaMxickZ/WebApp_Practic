@@ -16,10 +16,45 @@
             const btnClick = document.createElement("button");
             const btnText = document.createTextNode("Click me to display Date and Time");
             btnClick.appendChild(btnText);
+            const btnClick2 =document.createElement("button");
+            const btnText2 = document.createTextNode("time...");
+            btnClick2.appendChild(btnText2);
+            btnClick2.style.position = "absolute";
+            btnClick2.style.right = 0;
+            btnClick2.style.top = 0;
+            btnClick2.style.display = "none";
+
+            const br = document.createElement("br");
+            
+                
+            btnClick.addEventListener("click", function(){
+                btnClick2.style.display = "block";
+                btnClick.style.display = "none";
+                maincontainer.appendChild(br); //mainDiv
+
+               
+                
+                
+            });
+
+            btnClick2.addEventListener("click", function(){
+                btnClick2.style.display = "none";
+                btnClick.style.display = "block";
+                btnClick.innerHTML = Date();// date
+                maincontainer.removeChild(br); //mainDiv
+                
+            });
+
+            
+
             maincontainer.appendChild(btnClick); //mainDiv
+            maincontainer.appendChild(btnClick2); //mainDiv
+
+        
 
             const br1 = document.createElement("br");
             const br2 = document.createElement("br");
+            
 
             
             // Presonal Info 
@@ -183,9 +218,6 @@
                divfootter.style.display = "none";
             });
 
-
-
-            
             const divfootter = document.createElement("div");
             const imgifooter = document.createElement("img");
             imgifooter.setAttribute("src", "https://media.nngroup.com/media/editor/2019/01/16/clarity.png");
