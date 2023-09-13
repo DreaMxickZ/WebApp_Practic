@@ -24,6 +24,7 @@
             
             // Presonal Info 
             const aPresonalInfo = document.createElement("a");
+            aPresonalInfo.setAttribute("href", "1_65015144.html");
             aPresonalInfo.classList.add("personalInfoClass");
             
             aPresonalInfo.setAttribute("id", "personalInfoID");
@@ -32,7 +33,7 @@
             
             const aText = document.createTextNode("Personal Info");
             aPresonalInfo.appendChild(aText);
-            aPresonalInfo.setAttribute("href", "1_65015144.html");
+            
             
             //script Hover Personal Info
             aPresonalInfo.addEventListener("mouseout", function(){
@@ -77,22 +78,15 @@
             divPersonalInfo.setAttribute("id", "divinforesonal");
 
             //script Click Personal Info
-            // aPresonalInfo.addEventListener("click", function(){
-            //     if(divPersonalInfo.style.display == "none"   || divPersonalInfo.style.display === " "){
-            //         divPersonalInfo.style.display = "block";
-            //     }else{
-            //         divPersonalInfo.style.display = "none";
-            //     }
-            // });
+            aPresonalInfo.addEventListener("click", function(){
+                event.preventDefault(); 
+                if(divPersonalInfo.style.display == "none"   || divPersonalInfo.style.display === " "){
+                    divPersonalInfo.style.display = "block";
+                }else{
+                    divPersonalInfo.style.display = "none";
+                }
+            });
 
-           
-
-
-                        
-
-
-           
-            
                              
             maincontainer.appendChild(br1); 
             maincontainer.appendChild(br2); 
@@ -125,9 +119,9 @@
             const aliText4 = document.createElement("a");
 
             const aText1 = document.createTextNode("Fireworks");
-            const aText2 = document.createTextNode("Crest");
-            const aText3 = document.createTextNode("Action");
-            const aText4 = document.createTextNode("Buffalo");
+            const aText2 = document.createTextNode("Yourname");
+            const aText3 = document.createTextNode("Weathering With You");
+            const aText4 = document.createTextNode("Suzume");
 
             aliText1.setAttribute("href", "1_65015144.html");
             aliText2.setAttribute("href", "1_65015144.html");
@@ -151,20 +145,57 @@
 
             maincontainer.appendChild(ulList); //mainDiv
 
+            //img Select
+            const imgselect = document.createElement("img");
+            liList1.addEventListener("click", function(){
+               console.log("Fireworks");
+               event.preventDefault(); 
+               imgselect.setAttribute("src", "https://img.kapook.com/u/2017/pailin_p/9995Movies/Fireworks.jpg");
+               imgselect.setAttribute("width", "350px");
+               imgselect.setAttribute("height", "400px");
+               divfootter.style.display = "none";
+            });
 
-            //footer
-            const footer = document.createElement("footer");
+            liList2.addEventListener("click", function(){
+               console.log("Yourname");
+               event.preventDefault(); 
+               imgselect.setAttribute("src", "https://m.media-amazon.com/images/M/MV5BNGYyNmI3M2YtNzYzZS00OTViLTkxYjAtZDIyZmE1Y2U1ZmQ2XkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg");
+               imgselect.setAttribute("width", "350px");
+               imgselect.setAttribute("height", "400px");
+               divfootter.style.display = "none";
+            });
+
+            liList3.addEventListener("click", function(){
+               console.log("Weathering With You");
+               event.preventDefault(); 
+               imgselect.setAttribute("src", "https://www.bloggang.com/data/i/iamzeon/picture/1576158266.jpg");
+               imgselect.setAttribute("width", "350px");
+               imgselect.setAttribute("height", "400px");
+               divfootter.style.display = "none";
+            });
+
+            liList4.addEventListener("click", function(){
+               console.log("Suzume");
+               event.preventDefault(); 
+               imgselect.setAttribute("src", "https://m.media-amazon.com/images/M/MV5BNGVkNDc3NjUtNTY5ZS00ZmE0LWE3YzctMDk2OTRlNTdiZWQwXkEyXkFqcGdeQXVyMTU3NDg0OTgx._V1_FMjpg_UX1000_.jpg");
+               imgselect.setAttribute("width", "350px");
+               imgselect.setAttribute("height", "400px");
+               divfootter.style.display = "none";
+            });
+
+
+
+            
+            const divfootter = document.createElement("div");
             const imgifooter = document.createElement("img");
             imgifooter.setAttribute("src", "https://media.nngroup.com/media/editor/2019/01/16/clarity.png");
             imgifooter.setAttribute("width", "500px");
             imgifooter.setAttribute("height", "90px");
-            footer.appendChild(imgifooter);
+            divfootter.appendChild(imgifooter);
 
-            maincontainer.appendChild(footer); //mainDiv
-            
+            maincontainer.appendChild(imgselect); //mainDiv
+            maincontainer.appendChild(divfootter); //mainDiv
 
-            
-            
         </script>
     </body>
 </html>
